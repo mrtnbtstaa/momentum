@@ -1,0 +1,18 @@
+export const DIALOG_KEY = {
+    // CREATE PROJECT DIALOG KEY
+    CREATE_PROJECT_DIALOG: "create-project",
+    // DELETE PROJECT DIALOG KEY
+    DELETE_PROJECT_DIALOG: "delete-project",
+    // MANAGE MEMBER DIALOG KEY
+    MANAGE_MEMBER_DIALOG: "manage-member",
+    // PROJECT TASK DETAILS DIALOG KEY
+    PROJECT_TASK_DETAILS_DIALOGS: "project-task-details",
+    // EDIT PROJECT TASK DETAILS DIALOG KEY
+    EDIT_PROJECT_TASK_DETAILS_DIALOGS: "edit-project-task-details",
+    // DELETE PROJECT TASK DIALOG KEY
+    DELETE_PROJECT_TASK_DIALOG: "delete-project-task",
+    // INVITE MEMBER DIALOG KEY
+    INVITE_MEMBER_DIALOG: "invite-member",
+    // CREATE TASK DIALOG KEY
+    CREATE_TASK_DIALOG: "create-task"
+}
