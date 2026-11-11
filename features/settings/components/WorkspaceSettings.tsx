@@ -40,10 +40,10 @@ const WorkspaceSettings = ({
               {logo}
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" className="bg-[#141414] hover:bg-white/10 border-white/10 text-xs text-white h-9 px-4 rounded-xl cursor-pointer">
+              <Button variant="ghost">
                 <Upload className="w-3.5 h-3.5 mr-2 text-[#888888]" /> Upload logo
               </Button>
-              <Button variant="ghost" className="text-xs text-[#888888] hover:text-white h-9 cursor-pointer">
+              <Button variant="destructive">
                 Remove
               </Button>
             </div>
@@ -57,7 +57,7 @@ const WorkspaceSettings = ({
             <Input
               value={workspaceName}
               onChange={(e) => setWorkspaceName(e.target.value)}
-              className="bg-[#141414] border-white/10 text-xs text-white h-10 rounded-xl focus-visible:ring-white/20"
+              className="bg-[#141414] border-white/10 text-xs text-white h-10 focus-visible:ring-white/20"
             />
           </div>
         </div>

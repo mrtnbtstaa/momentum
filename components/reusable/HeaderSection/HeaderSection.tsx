@@ -25,11 +25,11 @@ const HeaderSection = ({ title, subTitle, buttonContent, onButtonClicked, withIc
                 {/* View Toggle */}
                 {hasViewMode && <ViewMode />}
                 <Button
-                    onClick={onButtonClicked}
-                    className="bg-white text-black hover:bg-gray-200 rounded-md"
-                    >
-                    {icon && icon}
-                    {buttonContent}
+                variant={"secondary"}
+                onClick={onButtonClicked}
+                >
+                {icon && icon}
+                {buttonContent}
                 </Button>
             </div>
         </header>
