@@ -10,12 +10,14 @@ import ReusableSelect from "@/components/reusable/Select/Select";
 import ReusableLabel from "@/components/reusable/Label/Label";
 import { PROJECT_TASK_ASSIGNEE, PROJECT_TASK_URGENT_STATUS, PROJECT_TASK_WORKFLOW_STATUS } from "../../data/project-task-generic.types";
 import { DialogFooter } from "@/components/ui/dialog";
+import ReusableInput from "@/components/reusable/Input/Input";
+import ReusableTextArea from "@/components/reusable/TextArea/TextArea";
 
 interface CreateTaskModalProps {
     onTaskSubmit?: (taskData: any) => void;
 }
 
-const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
+const CreateTaskModal = ({ onTaskSubmit }: CreateTaskModalProps) => {
     const { dialogKey, openDialog, setDialogType } = useDialogStore((state) => state);
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -46,10 +48,10 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                     {/* Task Title */}
                     <div className="space-y-2">
                         <ReusableLabel label="Task Title" required />
-                        <Input
+                        <ReusableInput
                             id="title"
                             defaultValue="Cryptographic key rotation & zero-trust certs"
-                            className="bg-[#141414] border-white/10 text-white focus-visible:ring-1 focus-visible:ring-white/20 h-10 text-xs"
+                            aria-label="Task Title"
                         />
                     </div>
 
@@ -61,6 +63,7 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                             options={PROJECT_TASK_URGENT_STATUS.options}
                             value=""
                             onValueChange={(val) => { }}
+                            aria-label="Category / Module"
                         />
                     </div>
 
@@ -73,6 +76,7 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                                 options={PROJECT_TASK_WORKFLOW_STATUS.options}
                                 value=""
                                 onValueChange={(val) => { }}
+                                aria-label="Workflow Status"
                             />
                         </div>
 
@@ -83,6 +87,7 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                                 options={PROJECT_TASK_URGENT_STATUS.options}
                                 value=""
                                 onValueChange={(val) => { }}
+                                aria-label="Priority"
                             />
                         </div>
                     </div>
@@ -96,6 +101,7 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                                 options={PROJECT_TASK_ASSIGNEE.options}
                                 value=""
                                 onValueChange={(val) => { }}
+                                aria-label="Assignee"
                             />
                         </div>
 
@@ -106,10 +112,10 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                                     Oct 24 (Overdue)
                                 </span>
                             </div>
-                            <Input
+                            <ReusableInput
                                 id="dueDate"
-                                defaultValue="10/24/2026"
-                                className="bg-[#141414] border-white/10 text-white focus-visible:ring-1 focus-visible:ring-white/20 h-10 text-xs font-mono"
+                                defaultValue="10/2024/2026"
+                                aria-label="Due Date"
                             />
                         </div>
                     </div>
@@ -117,10 +123,10 @@ const CreateTaskModal = ({  onTaskSubmit }: CreateTaskModalProps) => {
                     {/* Description / Scope */}
                     <div className="space-y-2">
                         <ReusableLabel label="Description / Scope" required />
-                        <Textarea
+                        <ReusableTextArea
                             id="description"
                             defaultValue="Automated key rotation and certificate lifecycle automation across HashiCorp Vault integration. Requires zero-trust enforcement validation."
-                            className="bg-[#141414] border-white/10 text-white min-h-24 resize-none focus-visible:ring-1 focus-visible:ring-white/20 text-xs leading-relaxed"
+                            aria-label="Description / Scope"
                         />
                     </div>
 

@@ -161,12 +161,12 @@ const ChatMessageAi = () => {
         <span className="flex items-center gap-1.5">
           🔗 Source: <button type="button" className="text-indigo-400 hover:text-indigo-300 hover:underline cursor-pointer font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-indigo-500 rounded">Atlas Core / ATL-042</button>
         </span>
-        <button 
+        <Button 
           type="button" 
           className="flex items-center gap-1 text-zinc-300 hover:text-white font-medium group cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-indigo-500 rounded px-1"
         >
           Open task <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-        </button>
+        </Button>
       </div>
 
     </article>

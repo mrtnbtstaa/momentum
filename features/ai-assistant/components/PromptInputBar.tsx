@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Send, Paperclip } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import ReusableInput from '@/components/reusable/Input/Input';
 
 const PromptInputBar = () => {
   const [prompt, setPrompt] = useState('');
@@ -19,14 +20,12 @@ const PromptInputBar = () => {
         onSubmit={handleSend} 
         className="bg-zinc-900/90 backdrop-blur-md border border-zinc-800 hover:border-zinc-700/80 focus-within:border-zinc-600 focus-within:ring-1 focus-within:ring-zinc-600 transition-all rounded-2xl p-3 shadow-2xl flex flex-col gap-3"
       >
-        <Input
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Ask Momentum AI to search, create, update, or assign tasks..."
-          aria-label="Prompt input"
-          className="bg-transparent border-none text-xs sm:text-sm text-zinc-100 placeholder:text-zinc-500 focus-visible:ring-0 px-2 py-1 shadow-none"
+        <ReusableInput 
+        value={prompt}
+        onChange={(e) => setPrompt(e.target.value)}
+        placeholder="Ask Momentum AI to search, create, update, or assign tasks..."
+        aria-label="Prompt input"
         />
-
         <div className="flex items-center justify-between px-2 pt-1 border-t border-zinc-800/80">
           <div className="flex items-center gap-2 text-xs text-zinc-400 select-none">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />

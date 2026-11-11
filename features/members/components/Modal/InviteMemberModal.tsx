@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 import { X, Info } from 'lucide-react';
 import ReusableDialog from '@/components/reusable/Dialog/Dialog';
 import { useDialogStore } from '@/store/useDialogStore';
@@ -9,6 +8,8 @@ import { DIALOG_KEY } from '@/lib/dialog-key';
 import ReusableLabel from '@/components/reusable/Label/Label';
 import ReusableSelect from '@/components/reusable/Select/Select';
 import { PROJECT_ASSIGNMENT } from '../../types/generic-member.t';
+import ReusableTextArea from '@/components/reusable/TextArea/TextArea';
+import ReusableInput from '@/components/reusable/Input/Input';
 
 interface InviteMembersModalProps {
     onSendInvites?: (emails: string[], role: string, project: string, note: string) => void;
@@ -77,7 +78,7 @@ const InviteMembersModal = ({
                             <span className="text-[11px] text-zinc-500">Separate with commas or enter</span>
                         </div>
 
-                        <div 
+                        <div
                             aria-label="Email recipient tags"
                             className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-2.5 flex flex-wrap items-center gap-2 min-h-16 focus-within:ring-1 focus-within:ring-zinc-700 transition-all"
                         >
@@ -97,14 +98,12 @@ const InviteMembersModal = ({
                                     </button>
                                 </span>
                             ))}
-                            <input
-                                type="text"
+                            <ReusableInput
                                 value={currentInput}
                                 onChange={(e) => setCurrentInput(e.target.value)}
                                 onKeyDown={handleKeyDown}
                                 placeholder={emails.length === 0 ? "name@company.com" : ""}
-                                aria-label="Add email address"
-                                className="bg-transparent border-none text-xs text-zinc-100 placeholder:text-zinc-600 focus:outline-none flex-1 min-w-35 px-1 py-1 font-mono"
+                                aria-label="Email addreses"
                             />
                         </div>
                     </div>
@@ -140,11 +139,12 @@ const InviteMembersModal = ({
                     {/* Project Assignment Dropdown */}
                     <div className="space-y-2">
                         <ReusableLabel label="Project assignment" required />
-                        <ReusableSelect 
-                            className="w-full" 
-                            options={PROJECT_ASSIGNMENT.options} 
+                        <ReusableSelect
+                            className="w-full"
+                            options={PROJECT_ASSIGNMENT.options}
                             value={project}
                             onValueChange={setProject}
+                            aria-label="Project assignment"
                         />
                     </div>
 
@@ -154,14 +154,13 @@ const InviteMembersModal = ({
                             <ReusableLabel label="Personal note" />
                             <span className="text-[11px] text-zinc-500 font-mono">{note.length} / 140 max</span>
                         </div>
-                        <Textarea
+                        <ReusableTextArea
                             value={note}
                             onChange={(e) => setNote(e.target.value)}
                             maxLength={140}
                             rows={3}
                             placeholder="Add a personal note to the invite email..."
-                            aria-label="Personal note for invitation email"
-                            className="bg-zinc-900/60 border-zinc-800 text-xs text-zinc-100 placeholder:text-zinc-600 rounded-xl resize-none p-3 focus-visible:ring-zinc-700 leading-relaxed"
+                            aria-label="Personal note"
                         />
                     </div>
 

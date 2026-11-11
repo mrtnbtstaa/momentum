@@ -1,14 +1,8 @@
 "use client";
 import { useState, useMemo } from 'react';
-import {
-    Search,
-} from 'lucide-react';
-import { Input } from '@/components/ui/input';
 import ReusableTable from '@/components/reusable/Table/Table';
 import TableColumns from './Columns';
 import { TeamMember } from '../types/members.t';
-import ReusableTabs from '@/components/reusable/Tabs/ReusableTabs';
-import { TEAM_MEMBER_TABS } from '../types/generic-member.t';
 import MemberHeader from './MemberHeader';
 import Wrapper from '@/components/reusable/Wrapper/Wrapper';
 import MemberFilter from './MemberFilter';

@@ -2,10 +2,8 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Trash2, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import ReusableDialog from '@/components/reusable/Dialog/Dialog';
 import { Task } from '@/features/projects/projects/types/projects.t';
 import ReusableSelect from '@/components/reusable/Select/Select';
@@ -14,6 +12,8 @@ import { useDialogStore } from '@/store/useDialogStore';
 import { DIALOG_KEY } from '@/lib/dialog-key';
 import ReusableLabel from '@/components/reusable/Label/Label';
 import { DialogFooter } from '@/components/ui/dialog';
+import ReusableInput from '@/components/reusable/Input/Input';
+import ReusableTextArea from '@/components/reusable/TextArea/TextArea';
 
 interface EditTaskModalProps {
   task: Task | null;
@@ -61,7 +61,7 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
     >
       {/* Flex container enforcing fixed modal height with a pinned footer */}
       <form onSubmit={handleSave} className="flex flex-col h-full max-h-[80vh]">
-        
+
         {/* Scrollable Body Container */}
         <div className="p-6 flex flex-col gap-5 overflow-y-auto custom-scrollbar flex-1 min-h-0">
 
@@ -83,13 +83,12 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
               <ReusableLabel label="Task Title" required />
               <span className="text-[11px] text-zinc-500 font-mono">{title.length} / 120</span>
             </div>
-            <Input
+            <ReusableInput
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               maxLength={120}
-              required
               aria-label="Task Title"
-              className="bg-zinc-900/60 border-zinc-800 text-zinc-100 text-xs h-11 rounded-xl focus-visible:ring-1 focus-visible:ring-zinc-700"
+              required
             />
           </div>
 
@@ -99,13 +98,12 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
               <ReusableLabel label="Description & Specifications" required />
               <span className="text-[11px] text-zinc-500">Atlas Core Specification</span>
             </div>
-            <Textarea
+            <ReusableTextArea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
               required
               aria-label="Description and Specifications"
-              className="bg-zinc-900/60 border-zinc-800 text-zinc-100 text-xs rounded-xl focus-visible:ring-1 focus-visible:ring-zinc-700 resize-none leading-relaxed"
             />
           </div>
 
@@ -114,21 +112,23 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
 
             <div className="space-y-2">
               <ReusableLabel label="Workflow Status" required />
-              <ReusableSelect 
-                value={status} 
-                onValueChange={(val) => {}} 
-                className="w-full" 
-                options={PROJECT_TASK_WORKFLOW_STATUS.options} 
+              <ReusableSelect
+                value={status}
+                onValueChange={(val) => { }}
+                className="w-full"
+                options={PROJECT_TASK_WORKFLOW_STATUS.options}
+                aria-label="Workflow Status"
               />
             </div>
 
             <div className="space-y-2">
               <ReusableLabel label="Priority Severity" required />
-              <ReusableSelect 
-                value={priority} 
-                onValueChange={(val) => {}}  
-                className="w-full" 
-                options={PROJECT_TASK_URGENT_STATUS.options} 
+              <ReusableSelect
+                value={priority}
+                onValueChange={(val) => { }}
+                className="w-full"
+                options={PROJECT_TASK_URGENT_STATUS.options}
+                aria-label="Priority Severity"
               />
             </div>
 
@@ -154,11 +154,10 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
                 <ReusableLabel label="Due Date" required />
               </div>
               <div className="relative">
-                <Input
+                <ReusableInput
                   value={dueDate}
                   onChange={(e) => setDueDate(e.target.value)}
                   aria-label="Due Date"
-                  className="bg-zinc-900 border-zinc-800 text-zinc-100 text-xs h-10 rounded-md px-3 pr-9"
                 />
                 <Calendar className="w-4 h-4 text-zinc-400 absolute right-3 top-3 pointer-events-none" aria-hidden="true" />
               </div>
@@ -170,7 +169,7 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
 
         {/* Footer Actions (Pinned via shrink-0 & mt-auto) */}
         <DialogFooter className="flex items-center justify-between px-6 py-4 bg-[#0A0A0A] border-t border-white/5 shrink-0 mt-auto">
-       
+
 
           <div className="flex items-center gap-3">
             <Button

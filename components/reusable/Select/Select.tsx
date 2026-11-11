@@ -1,16 +1,16 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "cn";
+import { ComponentPropsWithoutRef } from "react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-
-interface SelectProps<T extends string> extends SelectOption<T> {
-    className?: string
+interface SelectProps<T extends string> extends ComponentPropsWithoutRef<"select"> {
+    options: SelectOption<T>[]
     value: T;
     onValueChange: (value: T) => void;
 }
 
-const ReusableSelect = <T extends string>({ options, value, onValueChange, className }: SelectProps<T>) => {
+const ReusableSelect = <T extends string>({ options, value, onValueChange, className, ...props }: SelectProps<T>) => {
     return (
-        <Select defaultValue="Select value" value={value} onValueChange={(val) => {
+        <Select {...props} defaultValue="Select value" value={value} onValueChange={(val) => {
             if(val != null){
                 onValueChange(val as T)
             }

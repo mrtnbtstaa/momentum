@@ -4,6 +4,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Copy, Upload } from 'lucide-react';
 import ReusableLabel from '@/components/reusable/Label/Label';
+import ReusableInput from '@/components/reusable/Input/Input';
+import ReusableTextArea from '@/components/reusable/TextArea/TextArea';
 
 interface WorkspaceSettingsProps {
   workspaceName: string;
@@ -54,10 +56,9 @@ const WorkspaceSettings = ({
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
           <ReusableLabel label="Workspace name" />
           <div className="sm:col-span-2">
-            <Input
+            <ReusableInput
               value={workspaceName}
               onChange={(e) => setWorkspaceName(e.target.value)}
-              className="bg-[#141414] border-white/10 text-xs text-white h-10 focus-visible:ring-white/20"
             />
           </div>
         </div>
@@ -66,12 +67,11 @@ const WorkspaceSettings = ({
         <div className="grid grid-cols-1 sm:grid-cols-3 items-start gap-4">
           <ReusableLabel label="Description" />
           <div className="sm:col-span-2 flex flex-col gap-1.5">
-            <Textarea
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              maxLength={280}
-              rows={3}
-              className="bg-[#141414] border-white/10 text-xs text-white resize-none rounded-xl p-3 focus-visible:ring-white/20 leading-relaxed"
+            <ReusableTextArea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            maxLength={300}
+            rows={3}
             />
             <span className="text-[11px] text-[#888888] text-right font-mono">{description.length} / 280</span>
           </div>
@@ -81,10 +81,8 @@ const WorkspaceSettings = ({
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
           <ReusableLabel label="Workspace URL" />
           <div className="sm:col-span-2 flex items-center gap-2">
-            <Input
-              value={workspaceUrl}
-              readOnly
-              className="bg-[#141414] border-white/10 text-xs text-zinc-400 h-10 rounded-xl font-mono"
+            <ReusableInput
+            value={workspaceUrl}
             />
             <Button
               variant="outline"

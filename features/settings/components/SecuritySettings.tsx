@@ -43,9 +43,10 @@ const SecuritySettings = ({
                     <div className="sm:col-span-2 flex flex-col gap-1">
                         <ReusableSelect
                         className="w-full"
-                        options={PASSWORD_POLICY.options}
+                        options={PASSWORD_POLICY}
                         value={passwordPolicy}
                         onValueChange={setPasswordPolicy}
+                        aria-label="Password policy"
                         />
                         <span className="text-[11px] text-[#888888]">Applies to all new passwords and password resets.</span>
                     </div>
@@ -78,9 +79,10 @@ const SecuritySettings = ({
                     <div className="sm:col-span-2">
                         <ReusableSelect
                         className="w-full"
-                        options={SESSION_TIMEOUT.options}
+                        options={SESSION_TIMEOUT}
                         value={sessionTimeout}
                         onValueChange={setSessionTimeout}
+                        aria-label="Session timeout"
                         />
                     </div>
                 </div>
