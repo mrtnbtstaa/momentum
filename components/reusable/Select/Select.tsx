@@ -2,7 +2,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { cn } from "cn";
 
 
-interface SelectProps<T extends string> extends GenericSelectOption<T> {
+interface SelectProps<T extends string> extends SelectOption<T> {
     className?: string
     value: T;
     onValueChange: (value: T) => void;
@@ -10,9 +10,9 @@ interface SelectProps<T extends string> extends GenericSelectOption<T> {
 
 const ReusableSelect = <T extends string>({ options, value, onValueChange, className }: SelectProps<T>) => {
     return (
-        <Select defaultValue="Select value" value={value} onValueChange={(value) => {
-            if (value != null) {
-                onValueChange(value as T)
+        <Select defaultValue="Select value" value={value} onValueChange={(val) => {
+            if(val != null){
+                onValueChange(val as T)
             }
         }}>
             <SelectTrigger className={cn("bg-[#141414] border-white/10 text-white h-24 focus:ring-1 focus:ring-white/20", className)}>

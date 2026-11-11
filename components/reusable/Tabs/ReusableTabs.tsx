@@ -1,7 +1,7 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GenericTabsOption } from "./tabs.types";
+import { TabsOption } from "./tabs.types";
 
-interface TabProps<T extends string> extends GenericTabsOption<T>{
+interface TabProps<T extends string> extends TabsOption<T>{
     onValueChange?: (value: T) => void;
     value?: T;
     defaultValue?: string;
