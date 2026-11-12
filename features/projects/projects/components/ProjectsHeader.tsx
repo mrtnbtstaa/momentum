@@ -2,15 +2,12 @@
 
 import { useDialogStore } from "@/store/useDialogStore";
 import { DIALOG_KEY } from "@/lib/dialog-key";
-
 import HeaderSection from "@/components/reusable/HeaderSection/HeaderSection";
 
 interface ProjectsHeaderProps {
   projectCount?: number;
   activeCount?: number;
 }
-
-
 
 export function ProjectsHeader({
   projectCount = 12,

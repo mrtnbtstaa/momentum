@@ -13,7 +13,6 @@ import { Project } from "../types/projects.t";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { MoreVertical } from "lucide-react";
-import { DIALOG_KEY } from "@/lib/dialog-key";
 
 const features: TableFeatures = tableFeatures({
     rowPaginationFeature,

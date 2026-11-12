@@ -1,6 +1,5 @@
 "use client";
 
-
 import ReusableTable from "@/components/reusable/Table/Table";
 import { Project } from "../types/projects.t";
 import { projectsData } from "../data/mockProjects";
