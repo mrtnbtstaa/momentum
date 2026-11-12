@@ -1,6 +1,6 @@
-import { GenericTabsOption } from "@/components/reusable/Tabs/tabs.types";
+import { TabsOption } from "@/components/reusable/Tabs/tabs.types";
 
-export const NOTIFICATION_TABS: GenericTabsOption<string> = {
+export const NOTIFICATION_TABS: TabsOption<string> = {
     options: [
         { tab: 'All', },
         { tab: 'Unread', },

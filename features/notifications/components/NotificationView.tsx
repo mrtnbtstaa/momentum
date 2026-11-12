@@ -29,7 +29,6 @@ export const NotificationView: React.FC = () => {
       <NotificationTabs
         activeTab={activeTab}
         onTabChange={setActiveTab}
-        unreadCount={unreadCount}
       />
       {/* Reusable Data Table Container */}
       <NotificationTable activeTab={activeTab} notifications={notifications} setNotifications={setNotifications} />

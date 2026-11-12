@@ -1,18 +1,14 @@
-"use client";
-
 import ReusableTabs from "@/components/reusable/Tabs/ReusableTabs";
 import { NOTIFICATION_TABS } from "../types/notification-generic.t";
 
 interface NotificationTabsProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
-  unreadCount: number;
 }
 
 const NotificationTabs = ({
   activeTab,
   onTabChange,
-  unreadCount,
 }: NotificationTabsProps) => {
  
 

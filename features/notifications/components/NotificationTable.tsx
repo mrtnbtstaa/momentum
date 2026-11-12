@@ -1,5 +1,3 @@
-"use client";
-
 import ReusableTable from "@/components/reusable/Table/Table";
 import { NotificationItem } from "../types/notifications.t";
 import { Dispatch, SetStateAction } from "react";
