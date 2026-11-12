@@ -141,7 +141,7 @@ const InviteMembersModal = ({
                         <ReusableLabel label="Project assignment" required />
                         <ReusableSelect
                             className="w-full"
-                            options={PROJECT_ASSIGNMENT.options}
+                            options={PROJECT_ASSIGNMENT}
                             value={project}
                             onValueChange={setProject}
                             aria-label="Project assignment"
