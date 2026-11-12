@@ -74,29 +74,29 @@ const CreateProjectModal = ({ dialogType = "create" }: ProjectDialogProps) => {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <ReusableLabel label="Lifecyle status" required />
-                            <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_STATUS.options} />
+                            <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_STATUS} />
                         </div>
 
                         <div className="space-y-2">
                             <ReusableLabel label="Urgency level" required />
-                            <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_URGENCY.options} />
+                            <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_URGENCY} />
                         </div>
                     </div>
                 ) : (<div className="space-y-2">
                     <ReusableLabel label="Urgency level" required />
-                    <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_URGENCY.options} />
+                    <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_URGENCY} />
                 </div>)}
 
                 {/* Lead & Delivery Grid */}
                 <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                         <ReusableLabel label="Project Lead" required />
-                        <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_LEAD_SELECT.options} />
+                        <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_LEAD_SELECT} />
                     </div>
 
                     <div className="space-y-2">
                         <ReusableLabel label="Target Delivery" required />
-                        <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_QUARTER_SELECT.options} />
+                        <ReusableSelect value="" onValueChange={(val) => {}} className="w-full" options={PROJECT_QUARTER_SELECT} />
                     </div>
                 </div>
 
