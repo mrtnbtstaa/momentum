@@ -141,13 +141,13 @@ const ChatMessageAi = () => {
             <>
               <Button
                 variant="outline"
-                className="bg-zinc-900/90 hover:bg-zinc-800 border-zinc-800 text-zinc-300 text-xs h-9 px-4 rounded-xl cursor-pointer transition-colors shadow-sm focus-visible:ring-1 focus-visible:ring-indigo-500"
+                className="bg-zinc-900/90 hover:bg-zinc-800 border-zinc-800 text-zinc-300 text-xs h-9 px-4 rounded-md cursor-pointer transition-colors shadow-sm focus-visible:ring-1 focus-visible:ring-indigo-500"
               >
                 Cancel
               </Button>
               <Button
+                variant="secondary"
                 onClick={() => setReassigned(true)}
-                className="bg-zinc-100 hover:bg-white text-zinc-950 font-semibold text-xs h-9 px-4 rounded-xl shadow-sm flex items-center gap-1.5 cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-1 focus-visible:ring-indigo-500"
               >
                 <Check className="w-3.5 h-3.5 stroke-3" aria-hidden="true" /> Confirm Reassign
               </Button>

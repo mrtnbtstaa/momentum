@@ -16,21 +16,17 @@ const AiHeader = () => {
       {/* Action Controls */}
       <div className="flex items-center gap-2.5">
         <Button
-          variant="outline"
-          className="bg-zinc-900/90 hover:bg-zinc-800 border-zinc-800 text-zinc-200 hover:text-white text-xs h-9 px-4 rounded-xl flex items-center gap-2 shadow-sm transition-all cursor-pointer"
+          variant="secondary"
         >
-          <Plus className="w-4 h-4 text-zinc-400" />
+          <Plus className="w-4 h-4 text-black" />
           <span>New conversation</span>
-          <kbd className="hidden md:inline-flex items-center text-[10px] bg-zinc-800/80 text-zinc-400 px-1.5 py-0.5 rounded font-mono border border-zinc-700/50">
-            ⌘N
-          </kbd>
         </Button>
 
         <Button
           variant="ghost"
           size="icon"
           aria-label="Conversation history"
-          className="h-9 w-9 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white rounded-xl transition-all cursor-pointer shadow-sm"
+          className="h-9 w-9 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white rounded-md transition-all cursor-pointer shadow-sm"
         >
           <History className="w-4 h-4" />
         </Button>

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import ViewMode from "../ViewMode/ViewMode";
-import { LucideIcon } from "lucide-react";
 
 interface HeaderSectionProps {
     title: string;

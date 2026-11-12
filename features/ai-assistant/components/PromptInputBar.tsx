@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Send, Paperclip } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import ReusableInput from '@/components/reusable/Input/Input';
 
 const PromptInputBar = () => {
@@ -16,15 +15,15 @@ const PromptInputBar = () => {
 
   return (
     <div className="sticky bottom-4 pt-4">
-      <form 
-        onSubmit={handleSend} 
+      <form
+        onSubmit={handleSend}
         className="bg-zinc-900/90 backdrop-blur-md border border-zinc-800 hover:border-zinc-700/80 focus-within:border-zinc-600 focus-within:ring-1 focus-within:ring-zinc-600 transition-all rounded-2xl p-3 shadow-2xl flex flex-col gap-3"
       >
-        <ReusableInput 
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        placeholder="Ask Momentum AI to search, create, update, or assign tasks..."
-        aria-label="Prompt input"
+        <ReusableInput
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder="Ask Momentum AI to search, create, update, or assign tasks..."
+          aria-label="Prompt input"
         />
         <div className="flex items-center justify-between px-2 pt-1 border-t border-zinc-800/80">
           <div className="flex items-center gap-2 text-xs text-zinc-400 select-none">
@@ -46,9 +45,9 @@ const PromptInputBar = () => {
               <Paperclip className="w-4 h-4" />
             </Button>
             <Button
+              variant="secondary"
               type="submit"
               disabled={!prompt.trim()}
-              className="bg-zinc-100 hover:bg-white text-zinc-950 font-semibold text-xs h-8 px-4 rounded-xl shadow-sm flex items-center gap-1.5 cursor-pointer transition-all disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Send <Send className="w-3 h-3" />
             </Button>
