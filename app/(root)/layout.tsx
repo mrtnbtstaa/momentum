@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -9,43 +9,49 @@ interface MainLayoutProps {
   children: React.ReactNode;
 }
 
-const MainLayout = ({ children }: MainLayoutProps) => {
+const MainLayoutContent = ({ children }: MainLayoutProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
 
-  // Automatically close the sidebar on route changes (mobile)
+  // Automatically close sidebar when navigating between routes
   useEffect(() => {
     setIsSidebarOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when mobile sidebar is open
+  // Prevent background scrolling when mobile sidebar is open
   useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isSidebarOpen ? "hidden" : "";
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "";
     };
   }, [isSidebarOpen]);
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white">
-      <Sidebar 
-        isOpen={isSidebarOpen} 
-        onClose={() => setIsSidebarOpen(false)} 
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
       />
 
-      {/* Main Content Area (pushed right only on desktop) */}
-      <div className="lg:pl-64 flex flex-col min-h-screen transition-all duration-300">
+      <div className="flex min-h-screen flex-col transition-all duration-300 lg:pl-64">
         <Header onMenuClick={() => setIsSidebarOpen(true)} />
 
-        <main className="flex-1 p-4 md:p-4 max-w-[1600px] w-full mx-auto">
+        <main className="mx-auto w-full max-w-[1600px] flex-1 p-4">
           {children}
         </main>
       </div>
     </div>
+  );
+};
+
+const MainLayout = ({ children }: MainLayoutProps) => {
+  return (
+    <Suspense
+      fallback={<div className="min-h-screen bg-[#0A0A0A]" />}
+    >
+      <MainLayoutContent>{children}</MainLayoutContent>
+    </Suspense>
   );
 };
 
