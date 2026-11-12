@@ -5,12 +5,12 @@ import { Task } from '../../projects/types/projects.t';
 import { INITIAL_ACTIVITIES, INITIAL_TASKS } from '../data/mockTasks';
 import ProjectHeader from '../components/ProjectHeader';
 import MetricCards from '../components/MetricCards';
-import { AiStatusSummary } from '../components/AiStatusSummary';
 import TaskFilters from '../components/TaskFilters';
 import TaskList from '../components/TaskList';
 import ActivityFeed from '../components/ActivityFeed';
 import ProjectNotes from '../components/ProjectNotes';
 import Wrapper from '@/components/reusable/Wrapper/Wrapper';
+import AiStatusSummary from '../components/AiStatusSummary';
 
 const Content = () => {
     const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS);

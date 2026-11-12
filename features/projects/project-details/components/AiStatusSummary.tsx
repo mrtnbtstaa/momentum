@@ -1,8 +1,7 @@
-import React from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export const AiStatusSummary: React.FC = () => {
+const AiStatusSummary = () => {
   return (
     <div className="relative rounded-2xl p-6 bg-linear-to-r from-indigo-950/40 via-purple-950/30 to-zinc-900/80 border border-indigo-500/20 overflow-hidden shadow-xl">
       {/* Background ambient glow */}
@@ -37,3 +36,5 @@ export const AiStatusSummary: React.FC = () => {
     </div>
   );
 };
+
+export default AiStatusSummary;

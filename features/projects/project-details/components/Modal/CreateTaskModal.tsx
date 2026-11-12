@@ -1,8 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import ReusableDialog from "@/components/reusable/Dialog/Dialog";
 import { useDialogStore } from "@/store/useDialogStore";
 import { DIALOG_KEY } from "@/lib/dialog-key";
@@ -60,7 +58,7 @@ const CreateTaskModal = ({ onTaskSubmit }: CreateTaskModalProps) => {
                         <ReusableLabel label="Category / Module" required />
                         <ReusableSelect
                             className="w-full bg-[#141414] border-white/10 text-white text-xs h-10"
-                            options={PROJECT_TASK_URGENT_STATUS.options}
+                            options={PROJECT_TASK_URGENT_STATUS}
                             value=""
                             onValueChange={(val) => { }}
                             aria-label="Category / Module"
@@ -73,7 +71,7 @@ const CreateTaskModal = ({ onTaskSubmit }: CreateTaskModalProps) => {
                             <ReusableLabel label="Workflow Status" required />
                             <ReusableSelect
                                 className="w-full bg-[#141414] border-white/10 text-white text-xs h-10"
-                                options={PROJECT_TASK_WORKFLOW_STATUS.options}
+                                options={PROJECT_TASK_WORKFLOW_STATUS}
                                 value=""
                                 onValueChange={(val) => { }}
                                 aria-label="Workflow Status"
@@ -84,7 +82,7 @@ const CreateTaskModal = ({ onTaskSubmit }: CreateTaskModalProps) => {
                             <ReusableLabel label="Priority" required />
                             <ReusableSelect
                                 className="w-full bg-[#141414] border-white/10 text-white text-xs h-10"
-                                options={PROJECT_TASK_URGENT_STATUS.options}
+                                options={PROJECT_TASK_URGENT_STATUS}
                                 value=""
                                 onValueChange={(val) => { }}
                                 aria-label="Priority"
@@ -98,7 +96,7 @@ const CreateTaskModal = ({ onTaskSubmit }: CreateTaskModalProps) => {
                             <ReusableLabel label="Assignee" required />
                             <ReusableSelect
                                 className="w-full bg-[#141414] border-white/10 text-white text-xs h-10"
-                                options={PROJECT_TASK_ASSIGNEE.options}
+                                options={PROJECT_TASK_ASSIGNEE}
                                 value=""
                                 onValueChange={(val) => { }}
                                 aria-label="Assignee"

@@ -1,5 +1,5 @@
 import ReusableTabs from "@/components/reusable/Tabs/ReusableTabs";
-import { GenericTabsOption } from "@/components/reusable/Tabs/tabs.types";
+import { TASK_STATUES } from "../data/project-task-generic.types";
 
 interface TaskFiltersProps {
   statusFilter: string;
@@ -7,15 +7,6 @@ interface TaskFiltersProps {
   totalTasksCount: number;
 }
 
-const TASK_STATUES: GenericTabsOption<string> = {
-  options: [
-    {tab: "All"},
-    {tab: "To Do"},
-    {tab: "In Progress"},
-    {tab: "In Review"},
-    {tab: "Done"},
-  ]
-}
 
 const TaskFilters = ({
   statusFilter,

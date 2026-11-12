@@ -10,15 +10,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import TaskDetailsModal from './Modal/TaskDetailsModal';
 import { useDialogStore } from '@/store/useDialogStore';
 import { DIALOG_KEY } from '@/lib/dialog-key';
 import { useParams } from 'next/navigation';
-import { projectsData } from '../../projects/data/mockProjects';
 import { INITIAL_TASKS } from '../data/mockTasks';
-import EditTaskModal from './Modal/EditTaskDetailsModal';
-import ReusableDelete from '@/components/reusable/Delete/Delete';
-import CreateTaskModal from './Modal/CreateTaskModal';
+import ProjectDetailsModal from './ProjectDetailsModal';
 
 interface TaskListProps {
     tasks: Task[];
@@ -34,7 +30,6 @@ const TaskList = ({
     onDeleteTask,
 }: TaskListProps) => {
     const openDialog = useDialogStore((state) => state.openDialog);
-    const dialogKey = useDialogStore((state) => state.dialogKey);
     const { id } = useParams();
     const task = INITIAL_TASKS.find((p) => p.id == id)
     return (
@@ -161,16 +156,7 @@ const TaskList = ({
                     })
                 )}
             </div>
-            <TaskDetailsModal task={task ?? null} />
-            <EditTaskModal task={task ?? null} />
-            <CreateTaskModal />
-            <ReusableDelete
-                isOpen={dialogKey === DIALOG_KEY.DELETE_PROJECT_TASK_DIALOG}
-                onOpenChange={(value) => openDialog(value ? DIALOG_KEY.DELETE_PROJECT_TASK_DIALOG : null)}
-                onDelete={() => openDialog(null)}
-                title="Task"
-                name={task?.title}
-            />
+           <ProjectDetailsModal task={task} />
         </>
     );
 };

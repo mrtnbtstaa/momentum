@@ -116,7 +116,7 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
                 value={status}
                 onValueChange={(val) => { }}
                 className="w-full"
-                options={PROJECT_TASK_WORKFLOW_STATUS.options}
+                options={PROJECT_TASK_WORKFLOW_STATUS}
                 aria-label="Workflow Status"
               />
             </div>
@@ -127,7 +127,7 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
                 value={priority}
                 onValueChange={(val) => { }}
                 className="w-full"
-                options={PROJECT_TASK_URGENT_STATUS.options}
+                options={PROJECT_TASK_URGENT_STATUS}
                 aria-label="Priority Severity"
               />
             </div>
