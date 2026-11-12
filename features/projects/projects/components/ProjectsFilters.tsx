@@ -2,7 +2,7 @@
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import ReusableTabs from "@/components/reusable/Tabs/ReusableTabs";
-import { PROJECT_STATUS_TABS } from "../data/project-generic.types";
+import { PROJECT_STATUS_TABS } from "../types/project-generic.types";
 import ReusableSelect from "@/components/reusable/Select/Select";
 
 

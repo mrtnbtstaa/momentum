@@ -9,7 +9,7 @@ import ReusableRadioGroup from "@/components/reusable/RadioGroup/RadioGroup";
 import ReusableSelect from "@/components/reusable/Select/Select";
 import ReusableLabel from "@/components/reusable/Label/Label";
 import { Globe, Lock } from "lucide-react";
-import { PROJECT_RADIO_GROUP, PROJECT_LEAD_SELECT, PROJECT_QUARTER_SELECT, PROJECT_STATUS, PROJECT_URGENCY } from "../../data/project-generic.types";
+import { PROJECT_RADIO_GROUP, PROJECT_LEAD_SELECT, PROJECT_QUARTER_SELECT, PROJECT_STATUS, PROJECT_URGENCY } from "../../types/project-generic.types";
 import { DialogFooter } from "@/components/ui/dialog";
 import ReusableTextArea from "@/components/reusable/TextArea/TextArea";
 import ReusableInput from "@/components/reusable/Input/Input";
