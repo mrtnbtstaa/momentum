@@ -1,4 +1,3 @@
-import MainContent from "@/components/reusable/MainContent";
 import { ActiveProjects } from "../components/ActiveProjects";
 import { AiInsights } from "../components/AiInsights";
 import { MyRecentTasks } from "../components/MyRecentTasks";
@@ -9,7 +8,7 @@ import DashboardIntro from "../components/DashboardIntro";
 
 const Content = () => {
     return (
-        <MainContent>
+        <div className="space-y-8">
             <DashboardIntro />
             <StatsRow />
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -25,7 +24,7 @@ const Content = () => {
 
             {/* Footer Section */}
             <ActiveProjects />
-        </MainContent>
+        </div>
     )
 }
 
