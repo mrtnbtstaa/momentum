@@ -78,7 +78,7 @@ const WorkspaceSettings = ({
         </div>
 
         {/* URL */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
           <ReusableLabel label="Workspace URL" />
           <div className="sm:col-span-2 flex items-center gap-2">
             <ReusableInput
@@ -92,7 +92,7 @@ const WorkspaceSettings = ({
               <Copy className="w-3.5 h-3.5 text-[#888888]" /> Copy
             </Button>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </div>

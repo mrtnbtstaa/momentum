@@ -15,7 +15,7 @@ const AiAssistant = () => {
       <div className="max-w-5xl mx-auto w-full flex flex-col gap-6">
         
         {/* Momentum AI Banner */}
-        <AiBanner />
+        {/* <AiBanner /> */}
 
         {/* Quick Action Prompt Chips */}
         <QuickPrompts />

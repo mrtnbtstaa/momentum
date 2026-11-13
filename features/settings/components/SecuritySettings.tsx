@@ -65,13 +65,13 @@ const SecuritySettings = ({
                 </div>
 
                 {/* Single sign-on */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
+                {/* <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
                     <ReusableLabel label="Single sign-on" />
                     <div className="sm:col-span-2 flex items-center justify-between bg-[#141414] border border-white/10 px-4 py-2.5 rounded-xl">
                         <span className="text-zinc-200">Connected to Okta Enterprise SAML 2.0</span>
                         <button className="text-sky-400 hover:text-sky-300 font-medium cursor-pointer">Configure SSO</button>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Session timeout */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
